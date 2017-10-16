@@ -1,0 +1,28 @@
+{
+  "name": "YOURNAME-update-machine-microservice",
+  "version": "1.0.0",
+  "description": "This is a sample service that show off the basics of NodeJS, and connecting to a db",
+  "main": "main.js",
+  "author": "YORNAME",
+  "license": "GE Internal",
+  "dependencies": {
+    "express": "^4.13.4",
+    "pg": "^4.5.2",
+    "router": "^1.1.4",
+    "body-parser": "^1.13.3",
+    "node-uuid": "^1.4.7",
+    "moment": "2.13.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^2.0.1",
+    "mocha": "^2.4.5"
+  },
+  "engines": {
+    "node": "6.x"
+  },
+  "scripts": {
+    "start": "SET NODE_ENV=dev && node main.js",
+    "test": "mocha --timeout 10000"
+  }
+}
