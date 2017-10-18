@@ -22,14 +22,14 @@ module.exports = function (app, db) {
         // Why not look at res.status, and return user santitised messages depending on the error code
         res.status(500).json(err);
       } else {
-         //Otherwise send confirmation back and create a variable called returnObject to send that data back in 
+         //Otherwise send confirmation back and create a variable called returnObject to send that data back in
          let returnObject = [];
          // What we need to do now is loop through each row that has returned, and build our JSON reponce object
          // You can see here we have started it off by looping through each row, and logging its content
          results.forEach(function(sqlRow) {
              // console.log(sqlRow);
-             // We need to build an object here that matches that of the return payload as specified 
-             // in the XXX README XXX. If you look in the terinal output, you can see the format of the 
+             // We need to build an object here that matches that of the return payload as specified
+             // in the XXX README XXX. If you look in the terinal output, you can see the format of the
              // object returned from the database
              var objectToPush = {
                // You need to put code here
@@ -37,10 +37,10 @@ module.exports = function (app, db) {
              };
              // Here we take that translated row object, and add it to our list of data to send back
              returnObject.push(objectToPush)
- 
+
          });
          //And finally we send that data back as a responce to the browser
-         res.status(200).json(results);
+         res.status(200).json(returnObject);
       }
     });
   });
@@ -91,6 +91,6 @@ module.exports = function (app, db) {
         // Why not look at res.status, and return user santitised messages depending on the error code
         res.status(200).json(results);
       }
-    });	
+    });
   });
 };
